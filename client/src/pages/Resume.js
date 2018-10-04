@@ -1,5 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Resume = () => <div>Resume</div>;
+import ResumeEditorSidebar from '../components/ResumeEditorSidebar';
+
+class Resume extends Component {
+  constructor() {
+    super();
+    this.state = {
+      sidebarHidden: false
+    };
+
+    this._handleSidebar = this._handleSidebar.bind(this);
+  }
+
+  _handleSidebar = () => {
+    const sidebarHidden = !this.state.sidebarHidden;
+    this.setState({ sidebarHidden });
+  };
+
+  render() {
+    return (
+      <ResumeEditorSidebar
+      // sidebarHidden={this.state.sidebarHidden}
+      // handleSidebar={this.handleSidebar}
+      />
+    );
+  }
+}
 
 export default Resume;

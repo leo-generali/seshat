@@ -1,0 +1,115 @@
+@import '../../styles/variables/colors';
+@import '../../styles/variables/misc';
+
+@mixin icon {
+  margin-left: auto;
+  transition: 0.3s ease-in-out;
+  transform-origin: 50% 50%;
+}
+
+@mixin button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  cursor: pointer;
+  color: #afb1be;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  position: relative;
+  transition: 0.2s;
+
+  span {
+    transition: 0.2s;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    background: $gradient-main;
+    left: 0;
+    bottom: 0;
+    transition: 0.15s;
+  }
+}
+
+.form {
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+}
+
+.button {
+  @include button;
+  &:after {
+    width: 0;
+  }
+
+  &:hover {
+    background-color: #10141c;
+
+    span {
+      text-indent: 0.5rem;
+    }
+
+    &:after {
+      width: 100%;
+    }
+  }
+}
+
+.buttonActive {
+  @include button;
+  background-color: #10141c;
+
+  span {
+    text-indent: 0.5rem;
+  }
+
+  &:after {
+    width: 100%;
+  }
+}
+
+.expandButton {
+  background: $gradient-main;
+  text-shadow: $text-shadow;
+  background-size: 200% 200%;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  padding: 1rem 1rem;
+  margin: 0 auto;
+  border-radius: 0.3rem;
+  transition: max-width 0.2s, background 0.2s, transform 0.02s linear;
+  width: 100%;
+  max-width: 15rem;
+
+  &:first-child {
+    margin: 1rem auto 0.5rem;
+  }
+
+  &:nth-child(2) {
+    margin: 0.5rem auto 1rem;
+  }
+
+  &:hover {
+    background-size: 110% 110%;
+    max-width: 16rem;
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+.icon {
+  @include icon;
+  transform: rotate(-90deg);
+}
+
+.iconActive {
+  @include icon;
+  transform: rotate(0deg);
+}
