@@ -6,14 +6,7 @@ import Icon from '../Icon';
 
 class AccordionItem extends Component {
   render() {
-    const {
-      isExpanded,
-      caption,
-      onToggle,
-      name,
-      children,
-      ...rest
-    } = this.props;
+    const { isExpanded, caption, onToggle, name, children } = this.props;
     return (
       <div>
         <button

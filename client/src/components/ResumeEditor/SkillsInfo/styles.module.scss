@@ -1,0 +1,79 @@
+@import '../../../styles/variables/colors';
+@import '../../../styles/variables/misc';
+
+.inputWrapper {
+  margin-bottom: 0.5rem;
+}
+
+.titleWrapper {
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.titleWrapperEditing {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &:before {
+    content: 'EDITING';
+    color: #fff;
+    font-size: 1rem;
+    right: 1rem;
+    position: absolute;
+  }
+}
+
+.title {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  color: #9ca6af;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.addSkillSectionButton {
+  background: $gradient-main;
+  text-shadow: $text-shadow;
+  background-size: 200% 200%;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  padding: 1rem 1rem;
+  transition: max-width 0.2s, background 0.2s, transform 0.02s linear;
+  width: 100%;
+
+  &:hover {
+    background-size: 100% 100%;
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+.categoryEdit {
+  padding-left: 2rem;
+  padding-right: 6rem;
+  color: #9ca6af;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  width: calc(100% - 8rem);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    background-color: red;
+    width: 100%;
+  }
+}

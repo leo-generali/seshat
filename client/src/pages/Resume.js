@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import ResumeEditorSidebar from '../components/ResumeEditorSidebar';
+import Sidebar from '../components/ResumeEditor/Sidebar';
 
 class Resume extends Component {
   constructor() {
@@ -19,7 +19,7 @@ class Resume extends Component {
 
   render() {
     return (
-      <ResumeEditorSidebar
+      <Sidebar
       // sidebarHidden={this.state.sidebarHidden}
       // handleSidebar={this.handleSidebar}
       />

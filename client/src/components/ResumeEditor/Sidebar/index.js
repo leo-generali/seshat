@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 // Resume Sections
-// import ResumeEditorBasicInfo from '../ResumeEditorBasicInfo';
-// import ResumeEditorSkillsInfo from '../ResumeEditorSkillsInfo';
+import BasicInfo from '../BasicInfo';
+import SkillsInfo from '../SkillsInfo';
 
 // Sidebar
-import { Accordion, AccordionItem } from '../Accordion';
+import { Accordion, AccordionItem } from '../../Accordion';
 // import Icon from '../Icon';
 
 import styles from './styles.module.scss';
@@ -18,17 +18,10 @@ class ResumeEditorSidebar extends Component {
       <div className={styles.sidebar} style={hidden}>
         <Accordion>
           <AccordionItem defaultOpen={true} name="Basic" caption="Basic Info">
-            <p>asdasdas</p>
-            <p>asdasdas</p>
-            <p>asdasdas</p>
-            <p>asdasdas</p>
+            <BasicInfo />
           </AccordionItem>
           <AccordionItem defaultOpen={false} name="Skills" caption="Skills">
-            <p>asdasdas</p>
-            <p>asdasdas</p>
-            <p>asdasdas</p>
-            <p>asdasdas</p>
-            <p>asdasdas</p>
+            <SkillsInfo />
           </AccordionItem>
         </Accordion>
       </div>
