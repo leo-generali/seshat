@@ -16,10 +16,10 @@ class ResumeEditorSidebar extends Component {
     return (
       <div className={styles.sidebar} style={hidden}>
         <Accordion>
-          <AccordionItem defaultOpen={true} name="Basic" caption="Basic Info">
+          <AccordionItem defaultOpen={false} name="Basic" caption="Basic Info">
             <BasicInfo />
           </AccordionItem>
-          <AccordionItem defaultOpen={false} name="Skills" caption="Skills">
+          <AccordionItem defaultOpen={true} name="Skills" caption="Skills">
             <SkillsInfo />
           </AccordionItem>
         </Accordion>
