@@ -1,8 +1,10 @@
 import React, { Fragment } from 'react';
 import { Subscribe } from 'unstated';
+
 import BasicInfoContainer from '../../../containers/BasicInfo';
 
 // Resume Editor Components
+import { BASIC_INFO_MAPPING } from '../../../utils/constants';
 import Input from '../Input';
 
 const ResumeEditorBasicInfo = () => {
@@ -12,6 +14,7 @@ const ResumeEditorBasicInfo = () => {
         <Fragment>
           {Object.keys(basicInfo.state).map((input, index) => (
             <Input
+              placeholder={BASIC_INFO_MAPPING[input]}
               key={index}
               name={input}
               onChange={basicInfo.handleChange}

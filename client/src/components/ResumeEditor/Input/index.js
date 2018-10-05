@@ -9,7 +9,8 @@ const ResumeEditorInput = ({
   type,
   isEditing,
   removeSingleSkill,
-  category
+  category,
+  placeholder
 }) => {
   return (
     <div className={styles.container}>
@@ -19,7 +20,7 @@ const ResumeEditorInput = ({
         onChange={onChange}
         value={value}
         type={type}
-        placeholder={type}
+        placeholder={placeholder}
       />
       {isEditing && (
         <DeleteIcon
