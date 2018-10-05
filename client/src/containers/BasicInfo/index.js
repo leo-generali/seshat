@@ -2,16 +2,31 @@ import { Container } from 'unstated';
 
 class BasicInfoContainer extends Container {
   state = {
-    firstName: 'Leo',
-    lastName: 'Generali',
+    firstName: '',
+    lastName: '',
     emailAddress: '',
     linkedIn: '',
     phoneNumber: '',
-    github: ''
+    github: '',
+    website: ''
+  };
+
+  loadInitialStateBasicInfo = ({ basic_info }) => {
+    this.setState({
+      firstName: basic_info.first_name,
+      lastName: basic_info.last_name,
+      emailAddress: basic_info.email,
+      linkedIn: basic_info.linkedin,
+      phoneNumber: basic_info.tel,
+      github: basic_info.github,
+      website: basic_info.website
+    });
   };
 
   handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+    const { name, value } = event.target;
+
+    this.setState({ [name]: value });
   };
 }
 

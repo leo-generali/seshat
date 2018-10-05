@@ -1,5 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
+import { Subscribe } from 'unstated';
+import BasicInfoContainer from '../containers/BasicInfo';
+
+import Wrapper from '../components/ResumeEditor/Wrapper';
 import Sidebar from '../components/ResumeEditor/Sidebar';
 
 class Resume extends Component {
@@ -19,10 +23,18 @@ class Resume extends Component {
 
   render() {
     return (
-      <Sidebar
-      // sidebarHidden={this.state.sidebarHidden}
-      // handleSidebar={this.handleSidebar}
-      />
+      <Subscribe to={[BasicInfoContainer]}>
+        {(resume) => (
+          <Fragment>
+            <Wrapper
+              loadInitialStateBasicInfo={resume.loadInitialStateBasicInfo}
+              {...this.props}
+            >
+              <Sidebar />
+            </Wrapper>
+          </Fragment>
+        )}
+      </Subscribe>
     );
   }
 }

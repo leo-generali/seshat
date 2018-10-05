@@ -6,7 +6,6 @@ import SkillsInfo from '../SkillsInfo';
 
 // Sidebar
 import { Accordion, AccordionItem } from '../../Accordion';
-// import Icon from '../Icon';
 
 import styles from './styles.module.scss';
 

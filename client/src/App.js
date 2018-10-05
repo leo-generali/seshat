@@ -1,22 +1,13 @@
 import React, { Component } from 'react';
-import { Router, Link } from '@reach/router';
-import { Home, Resume } from './pages';
+import { Provider } from 'unstated';
+import Routes from './Routes';
 
 class App extends Component {
-  componentDidMount() {
-    window
-      .fetch('/api/basic_infos')
-      .then((response) => response.json())
-      .then((json) => console.log(json))
-      .catch((error) => console.log(error));
-  }
-
   render() {
     return (
-      <Router>
-        <Home path="/" />
-        <Resume path="resume" />
-      </Router>
+      <Provider>
+        <Routes />
+      </Provider>
     );
   }
 }
