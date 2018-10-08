@@ -5,8 +5,8 @@ class SkillsInfoContainer extends Container {
   state = {
     skills: [
       {
-        name: 'Front End',
-        keywords: ['JavaScript', 'CSS3', 'HTML5']
+        name: '',
+        keywords: ['']
       }
     ]
   };

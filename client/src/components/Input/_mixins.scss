@@ -16,6 +16,10 @@
 @mixin wrapper {
   width: 85%;
   margin: 0 auto 0.5rem;
+
+  &:last-of-type {
+    margin-bottom: 1rem;
+  }
 }
 
 @mixin label {
