@@ -7,7 +7,7 @@ class Routes extends Component {
     return (
       <Router>
         <Home path="/" />
-        <Resume path="resume" />
+        <Resume path="/resume" />
         <Resume path="resume/:resumeId" />
       </Router>
     );

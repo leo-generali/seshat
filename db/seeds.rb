@@ -15,3 +15,7 @@ test_basic_info = BasicInfo.create(
   github: "HonestAbe",
   website: "https://honestabe.biz",
 )
+
+resume = Resume.create(
+  basic_info: test_basic_info
+)
