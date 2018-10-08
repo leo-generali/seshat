@@ -1,6 +1,14 @@
 .icon {
   margin-right: 1rem;
-  background-color: red;
   border-radius: 100%;
   padding: 1rem;
+  transition: 0.2s;
+}
+
+.iconHovering {
+  margin-right: 1rem;
+  border-radius: 100%;
+  padding: 1rem;
+  transition: 0.2s;
+  transform: translateY(-0.4rem);
 }

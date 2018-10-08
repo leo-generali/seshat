@@ -15,12 +15,7 @@ class Wrapper extends Component {
   }
 
   render() {
-    return (
-      <Fragment>
-        <p>asdasd</p>
-        {this.props.children}
-      </Fragment>
-    );
+    return <Fragment>{this.props.children}</Fragment>;
   }
 }
 

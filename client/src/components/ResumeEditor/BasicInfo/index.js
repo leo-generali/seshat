@@ -5,26 +5,25 @@ import BasicInfoContainer from '../../../containers/BasicInfo';
 
 // Resume Editor Components
 import { BASIC_INFO_MAPPING } from '../../../utils/constants';
-import Input from '../../Form/Input';
-import styles from './styles.module.scss';
+import Input from '../../Input';
 
 const ResumeEditorBasicInfo = () => {
   return (
     <Subscribe to={[BasicInfoContainer]}>
       {(basicInfo) => (
-        <Fragment>
+        <form>
           {Object.keys(basicInfo.state).map((input, index) => (
             <Input
               key={index}
-              className={styles.input}
               placeholder={BASIC_INFO_MAPPING[input]}
+              label={BASIC_INFO_MAPPING[input]}
               name={input}
               onChange={basicInfo.handleChange}
               value={basicInfo.state[input]}
               type="text"
             />
           ))}
-        </Fragment>
+        </form>
       )}
     </Subscribe>
   );

@@ -21,6 +21,16 @@ class SkillsInfoContainer extends Container {
     this.setState({ skills });
   };
 
+  handleChangeSkillName = (event, skillIndex) => {
+    const { value } = event.target;
+
+    const skills = update(this.state.skills, {
+      [skillIndex]: { name: { $set: value } }
+    });
+
+    this.setState({ skills });
+  };
+
   addSkill = (event, skillIndex) => {
     event.preventDefault();
 
@@ -58,20 +68,6 @@ class SkillsInfoContainer extends Container {
     event.preventDefault();
     const currentlyEditing = event.target.name;
     this.setState({ currentlyEditing });
-  };
-
-  editSkillName = (event) => {
-    const index = this.state.categories.indexOf(event.target.name);
-    const categories = [...this.state.categories];
-    categories[index] = event.target.value;
-
-    const skills = this._renameProperty(
-      event.target.name,
-      event.target.value,
-      this.state.skills
-    );
-
-    this.setState({ categories, skills, currentlyEditing: event.target.value });
   };
 
   handleKeyPress = (event) => {

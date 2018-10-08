@@ -5,11 +5,11 @@ class EducationInfoContainer extends Container {
   state = {
     schools: [
       {
-        name: 'Franklin and Marshall College',
-        location: 'Lancaster, PA',
-        degree: 'BA',
-        major: 'Business',
-        gpa: '3.1',
+        name: '',
+        location: '',
+        degree: '',
+        major: '',
+        gpa: '',
         start: '',
         finish: ''
       }

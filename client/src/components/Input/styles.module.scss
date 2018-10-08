@@ -1,0 +1,40 @@
+@import './mixins';
+
+// Main Inputs
+
+.wrapper {
+  @include wrapper();
+}
+
+.input {
+  @include input();
+  width: 100%;
+}
+
+.label {
+  @include label();
+  margin: 1rem 0 0.3rem;
+}
+
+// Child Inputs
+
+.subWrapper {
+  @include wrapper();
+  display: flex;
+  align-items: center;
+}
+
+.subInput {
+  @include input();
+  width: 100%;
+  margin-left: auto;
+}
+
+.subLabel {
+  @include label();
+  margin: 0.3rem 0;
+}
+
+.sub {
+  width: 7%;
+}

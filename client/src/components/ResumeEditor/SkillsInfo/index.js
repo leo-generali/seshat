@@ -3,12 +3,11 @@ import { Subscribe } from 'unstated';
 import SkillsInfoContainer from '../../../containers/SkillsInfo';
 
 // Resume Editor Components
-import Input from '../../Form/Input';
-import Button from '../../Button';
-import ButtonWrapper from '../../ButtonWrapper';
+import Input from '../../Input';
+// import Button from '../../Button';
+// import ButtonWrapper from '../../ButtonWrapper';
 
 // Styles
-import styleInput from '../../../styles/Form/input.module.scss';
 import styles from './styles.module.scss';
 
 const ResumeEditorSkillsInfo = () => {
@@ -18,11 +17,19 @@ const ResumeEditorSkillsInfo = () => {
         <Fragment>
           {skillsInfo.state.skills.map((skill, skillIndex) => (
             <form key={skillIndex}>
-              <span className={styles.title}>{skill.name}</span>
+              <Input
+                label={'Category'}
+                key={skillIndex}
+                value={skill.name}
+                type="text"
+                onChange={(event) =>
+                  skillsInfo.handleChangeSkillName(event, skillIndex)
+                }
+              />
               {skill.keywords.map((keyword, keywordIndex) => (
                 <Input
+                  sub={true}
                   key={keywordIndex}
-                  className={styleInput.input}
                   value={keyword}
                   type="text"
                   onChange={(event) =>
@@ -39,10 +46,10 @@ const ResumeEditorSkillsInfo = () => {
               </button>
             </form>
           ))}
-          <ButtonWrapper>
+          {/* <ButtonWrapper>
             <Button onClick={skillsInfo.addSkillSection}>Add Group</Button>
             <Button onClick={skillsInfo.addSkillSection}>Add Group</Button>
-          </ButtonWrapper>
+          </ButtonWrapper> */}
         </Fragment>
       )}
     </Subscribe>

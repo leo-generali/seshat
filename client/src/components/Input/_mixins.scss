@@ -1,0 +1,23 @@
+@import '../../styles/variables/misc';
+
+@mixin input {
+  box-sizing: border-box;
+  color: #afb1be;
+  background: #32364a;
+  border-radius: 0.3rem;
+  padding: 1rem;
+  text-shadow: $text-shadow;
+
+  &::placeholder {
+    color: #6a6b72;
+  }
+}
+
+@mixin wrapper {
+  width: 85%;
+  margin: 0 auto 0.5rem;
+}
+
+@mixin label {
+  display: block;
+}
