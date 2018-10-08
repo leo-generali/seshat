@@ -3,16 +3,26 @@ import Collapse from 'react-collapse';
 
 import styles from './styles.module.scss';
 import Icon from '../Icon';
+import AccordionIcon from './Icon';
 
 class AccordionItem extends Component {
   render() {
-    const { isExpanded, caption, onToggle, name, children } = this.props;
+    const {
+      isExpanded,
+      caption,
+      onToggle,
+      name,
+      children,
+      color,
+      type
+    } = this.props;
     return (
       <div>
         <button
           className={isExpanded ? styles.buttonActive : styles.button}
           onClick={() => onToggle(name)}
         >
+          <AccordionIcon color={color} type={type} />
           {caption}
           <Icon
             styleName={isExpanded ? styles.iconActive : styles.icon}
