@@ -68,7 +68,7 @@ class Accordion extends Component {
           <span>Collapse All</span>
         </button>
         {Children.toArray(children)
-          .filter((c) => c)
+          // .filter((c) => c.type !== 'div'
           .map((child) =>
             cloneElement(child, {
               isExpanded: openedHash[child.props.name],

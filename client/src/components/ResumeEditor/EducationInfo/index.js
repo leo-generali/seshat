@@ -58,7 +58,7 @@ const ResumeEditorEducationInfo = () => {
                   onChange={(event) => educationInfo.onChange(event, index)}
                 />
                 <Input
-                  label={'Start'}
+                  label={'Start Date'}
                   sub={true}
                   value={school.start}
                   placeholder="Sep. 2011"
@@ -66,7 +66,7 @@ const ResumeEditorEducationInfo = () => {
                   onChange={(event) => educationInfo.onChange(event, index)}
                 />
                 <Input
-                  label={'Finish'}
+                  label={'Finish Date'}
                   sub={true}
                   value={school.finish}
                   placeholder="May 2015"

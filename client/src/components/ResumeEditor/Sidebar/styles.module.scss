@@ -1,7 +1,8 @@
 @import '../../../styles/variables/misc';
+@import '../../../styles/variables/colors';
 
 .sidebar {
-  background-color: #151b26;
+  background-color: $sidebar-col-background;
   display: flex;
   flex-direction: column;
   width: $sidebar-width;
