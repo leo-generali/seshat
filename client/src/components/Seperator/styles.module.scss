@@ -1,0 +1,9 @@
+@import '../../styles/variables/colors';
+
+.seperator {
+  border-radius: 1rem;
+  margin: 1.5rem auto;
+  width: 90%;
+  height: 1rem;
+  background-image: $gradient-main;
+}

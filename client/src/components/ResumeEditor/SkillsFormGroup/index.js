@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
+import Input from '../../Form/Input';
+
 import styles from './styles.module.scss';
 import Icon from '../../Icon';
 
-class ResumeEditorInput extends Component {
-  shouldComponentUpdate(nextProps, nextState) {
-    return nextProps.value !== this.props.value;
-  }
-
+class SkillsFormGroup extends Component {
   render() {
     const {
       name,
@@ -21,14 +19,13 @@ class ResumeEditorInput extends Component {
 
     return (
       <div className={styles.container}>
-        <input
+        <Input
           className={styles.input}
           name={name}
-          onChange={onChange}
           value={value}
+          onChange={onChange}
           type={type}
-          placeholder={placeholder}
-          ref={this.inputRef}
+          place={placeholder}
         />
         {isEditing && (
           <DeleteIcon
@@ -42,23 +39,6 @@ class ResumeEditorInput extends Component {
   }
 }
 
-// export default ResumeEditorInput;
-
-// const ResumeEditorInput = ({
-//   name,
-//   onChange,
-//   value,
-//   type,
-//   isEditing,
-//   removeSingleSkill,
-//   category,
-//   placeholder
-// }) => {
-//   return (
-
-//   );
-// };
-
 const DeleteIcon = ({ skill, category, removeSingleSkill }) => {
   return (
     <button
@@ -70,4 +50,4 @@ const DeleteIcon = ({ skill, category, removeSingleSkill }) => {
   );
 };
 
-export default ResumeEditorInput;
+export default SkillsFormGroup;

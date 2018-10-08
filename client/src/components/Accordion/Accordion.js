@@ -19,7 +19,15 @@ class Accordion extends Component {
 
   onToggle = (name) => {
     const openedHash = { ...this.state.openedHash };
+
+    // Object.keys(openedHash).forEach((child) => {
+    //   openedHash[child] = false;
+    // });
+
+    // openedHash[name] = true;
+
     this.setState({ openedHash: { ...openedHash, [name]: !openedHash[name] } });
+    // this.setState({ openedHash });
   };
 
   _expandAll = () => {

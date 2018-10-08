@@ -3,19 +3,29 @@ import update from 'immutability-helper';
 
 class SkillsInfoContainer extends Container {
   state = {
-    categories: ['Front-end', 'Frameworks', 'Tools'],
-    // prettier-ignore
-    skills: {
-      'Front-end': ['JavaScript', 'CSS3', 'HTML5'],
-      'Frameworks': ['React', 'Knockout.js', 'jQuery'],
-      'Tools': ['Git', 'Github/BitBucket (Version Control)', 'NPM']
-    },
-    currentlyEditing: ''
+    skills: [
+      {
+        name: 'Front End',
+        keywords: ['JavaScript', 'CSS3', 'HTML5']
+      }
+    ]
   };
 
-  handleChange = ({ event, category, index }) => {
+  handleChange = (event, skillIndex, keywordIndex) => {
+    const { value } = event.target;
+
     const skills = update(this.state.skills, {
-      [category]: { [index]: { $set: event.target.value } }
+      [skillIndex]: { keywords: { [keywordIndex]: { $set: value } } }
+    });
+
+    this.setState({ skills });
+  };
+
+  addSkill = (event, skillIndex) => {
+    event.preventDefault();
+
+    const skills = update(this.state.skills, {
+      [skillIndex]: { keywords: { $push: [''] } }
     });
 
     this.setState({ skills });
@@ -23,19 +33,19 @@ class SkillsInfoContainer extends Container {
 
   addSkillSection = (event) => {
     event.preventDefault();
-    const test = { 'Back-end': ['Node', 'Rails'] };
-    const categories = update(this.state.categories, { $push: ['Back-end'] });
-    const skills = update(this.state.skills, { $merge: test });
-
-    this.setState({ categories, skills });
+    const skill = {
+      name: 'New Skill',
+      keywords: ['']
+    };
+    const skills = update(this.state.skills, { $push: [skill] });
+    this.setState({ skills });
   };
 
-  addSkill = (event) => {
+  removeSkillsSection = (event) => {
     event.preventDefault();
-    const category = event.target.name;
-    const skills = update(this.state.skills, { [category]: { $push: [''] } });
-
-    this.setState({ skills });
+    const categories = this._filterCategories(event.target.name);
+    const skills = this._filterSkills(categories);
+    this.setState({ categories, skills });
   };
 
   finishEditingSkillSection = (event) => {
@@ -64,13 +74,6 @@ class SkillsInfoContainer extends Container {
     this.setState({ categories, skills, currentlyEditing: event.target.value });
   };
 
-  removeSkillsSection = (event) => {
-    event.preventDefault();
-    const categories = this._filterCategories(event.target.name);
-    const skills = this._filterSkills(categories);
-    this.setState({ categories, skills });
-  };
-
   handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       const currentlyEditing = '';
@@ -87,8 +90,8 @@ class SkillsInfoContainer extends Container {
 
   _removeSingleSkill = (elementIndexToRemove, category) => {
     const slicedSkillList = [
-      ...this.state.skills[category].slice(0, elementIndexToRemove),
-      ...this.state.skills[category].slice(elementIndexToRemove + 1)
+      ...this.state.skills.slice(0, elementIndexToRemove),
+      ...this.state.skills.slice(elementIndexToRemove + 1)
     ];
 
     const skills = update(this.state.skills, {

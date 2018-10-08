@@ -6,6 +6,9 @@ import BasicInfoContainer from '../containers/BasicInfo';
 import Wrapper from '../components/ResumeEditor/Wrapper';
 import Sidebar from '../components/ResumeEditor/Sidebar';
 
+// Debugging
+import Debug from '../components/Debug';
+
 class Resume extends Component {
   constructor() {
     super();
@@ -30,7 +33,10 @@ class Resume extends Component {
               loadInitialStateBasicInfo={resume.loadInitialStateBasicInfo}
               {...this.props}
             >
-              <Sidebar />
+              <div style={{ display: 'flex' }}>
+                <Sidebar />
+                <Debug />
+              </div>
             </Wrapper>
           </Fragment>
         )}
